@@ -24,3 +24,4 @@ rules:
 
 ignore: |
   changelogs/.plugin-cache.yaml
+  changelogs/changelog.yaml

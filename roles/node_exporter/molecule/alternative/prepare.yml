@@ -54,3 +54,18 @@
         csr_path: "/tmp/tls.csr"
         privatekey_path: "/tmp/tls.key"
         provider: selfsigned
+
+    - name: Create test mount directory
+      ansible.builtin.file:
+        path: /home/test
+        state: directory
+        owner: root
+        group: root
+        mode: 0755
+
+    - name: Mount test filesystem
+      ansible.posix.mount:
+        path: /home/test
+        src: tmpfs
+        fstype: tmpfs
+        state: mounted
